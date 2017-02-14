@@ -18,6 +18,16 @@ public class Attribute {
     private List<String> records;
     private double entropy;
     private double gain;
+
+    public Attribute(String name, Set<String> domains, List<String> records, double entropy, double gain) {
+        this.name = name;
+        this.domains = domains;
+        this.records = records;
+        this.entropy = entropy;
+        this.gain = gain;
+    }
+    
+    
     
     public String getName() {
         return name;
@@ -43,5 +53,8 @@ public class Attribute {
         this.records = records;
     }
     
+    public String toString(){
+        return this.name+" "+this.domains.toString()+" "+this.records.toString()+" "+this.entropy+" "+this.gain;
+    }
     
 }
