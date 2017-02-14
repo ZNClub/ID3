@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * @author: ZNevzz
+ * 
  */
 package id3;
 
@@ -20,13 +20,18 @@ public class ID3 {
     public static void main(String[] args) throws Exception{
             // INSTANTIATE
         //Reader fileReader = new FileReader(new File("c:\\Users\\universe\\Documents\\NetBeansProjects\\ID3\\src\\id3.csv"));
-        List<Attribute> attributes = new LinkedList<Attribute>();
         
-        String csvFile = "/Users/mkyong/csv/country.csv";
-        BufferedReader br = null;
         
-            // INPUT READING START       
-       
+            // INPUT READING START  
+        List<Attribute> attributes = new LinkedList<Attribute>();        
+        String csvFile = "C:\\Users\\universe\\Documents\\NetBeansProjects\\ID3\\src\\id3\\id3.csv";
+        BufferedReader br = new BufferedReader(new FileReader(csvFile));
+        String line="";
+        while ((line = br.readLine()) != null) {
+            String[] columns = line.split(",");
+            System.out.println("attributes="+columns.length+"\nvalues="+Arrays.toString(columns));
+
+        }
         
             // INPUT READING END        
     }
